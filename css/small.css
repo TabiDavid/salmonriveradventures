@@ -6,15 +6,24 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    
 }
 
 header {
-    background-image: url("../img/salmonriver.jpg");
-    width: 100%;
+    margin: auto;
+    width: 65%;
     height: 600px;
     background-size: cover;
-    background-position: center;
-    overflow: hidden;
+    background: linear-gradient(top, #31D7F0 0%, #D6CA99 100%);
+    background: -webkit-linear-gradient(top, rgba(49, 214, 240, 0.308) 0%, rgba(214, 202, 153, 0.692) 100%), url("../img/salmonriver.jpg");
+    background-attachment: fixed;
+    position: relative;
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 header nav{
     height: 70px;
