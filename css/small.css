@@ -11,12 +11,15 @@ body {
 
 header {
     margin: auto;
-    width: 65%;
+    width: 100%;
     height: 600px;
     background-size: cover;
     background: linear-gradient(top, #31D7F0 0%, #D6CA99 100%);
     background: -webkit-linear-gradient(top, rgba(49, 214, 240, 0.308) 0%, rgba(214, 202, 153, 0.692) 100%), url("../img/salmonriver.jpg");
+    background-size: 100%;
+   
     background-attachment: fixed;
+    background-repeat: no-repeat;
     position: relative;
 }
 
@@ -46,7 +49,7 @@ nav .logo img{
 /*CSS for navigation*/
 nav {
 	margin: 0 auto;
-	max-width: 760px;
+	max-width: 100%;
 	background-color: tomato;
 }
 .navigation {
