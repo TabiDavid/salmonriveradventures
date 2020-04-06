@@ -107,44 +107,122 @@ header .textos h2{
 }
 
 /*main*/
+main {
 
+    width: 80%;
+    margin: auto;
+}
 .box {
-    display: grid;
-    width: 70%;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
-    margin: 0 auto;
+border: 10px;
+width: 100%;
+margin: auto;
+text-align: center;
+
 }
 
 .contain {
+    width: 100%;
     height: 300px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .image{
     width: 100%;
+    height: 100%;
+}
+
+/*Weather information */
+
+.app-title{
+    text-align: center;
+
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.app-title p{
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: #293251;
+}
+
+.notification{
+    background-color: #f8d7da;
+    display: none;
+}
+
+.notification p{
+    color: #721c24;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.weather-container{
     width: 100%;
+    height: 300px;
+    background-color: rgb(215, 228, 245);
 }
 
-/*Forecast code*/
-
-table {
+.weather-icon{
+    width: ;
+    height: 128px;
     margin: auto;
 }
 
-td, th {
-    border: rgb(116, 15, 74) solid;
-    margin: auto;
-    padding: 5px;
- 
+.weather-icon img{
+    display: block;
+    margin: 0 auto;
 }
 
-.img1 {
-  display: block;  
-margin: auto;
+.temperature-value{
+    width: ;
+    height:60px;
 }
 
-footer {
-        max-width: 900px;
+.temperature-value p{
+    padding: 0;
+    margin: 0;
+    color: #293251;
+    font-size: 4em;
+    text-align: center;
+   
+}
+
+.temperature-value span{
+    color: #293251;
+    font-size: 0.5em;
+}
+
+
+.temperature-description p{
+    padding: 8px;
+    margin: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.location p{
+    margin: 0;
+    padding: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+    footer div{
+
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(80, 35, 56);
+        font-family: 'Trade Winds' ;
+        color: honeydew;
+        max-width: 100%;
         margin: 0 auto;
-    }
+
+        }
