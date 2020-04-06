@@ -1,13 +1,15 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     
 }
+
 
 header {
     margin: auto;
@@ -17,9 +19,7 @@ header {
     background: linear-gradient(top, #31D7F0 0%, #D6CA99 100%);
     background: -webkit-linear-gradient(top, rgba(49, 214, 240, 0.308) 0%, rgba(214, 202, 153, 0.692) 100%), url("../img/salmonriver.jpg");
     background-size: 100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: absolute;
+    position: relative;
 }
 
 .wave {
@@ -27,6 +27,7 @@ header {
     width: 100%;
     bottom: 0;
 }
+
 header nav{
     height: 70px;
     display: flex;
@@ -37,12 +38,13 @@ header nav{
 nav .logo{
     height: 100%;
     background-color: royalblue;
-    margin-left: 80px;
+ 
 }
 nav .logo img{
     object-fit: cover;
     height: inherit;
 }
+
 
 
 /*CSS for navigation*/
@@ -92,7 +94,7 @@ header .textos{
 }
 
 header .textos h1{
-    font-size: 100px;
+    font-size: 75px;
     letter-spacing: 3px;
     font-weight: 600;
     margin-bottom: 10px;
