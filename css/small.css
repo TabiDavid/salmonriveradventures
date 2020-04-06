@@ -17,10 +17,9 @@ header {
     background: linear-gradient(top, #31D7F0 0%, #D6CA99 100%);
     background: -webkit-linear-gradient(top, rgba(49, 214, 240, 0.308) 0%, rgba(214, 202, 153, 0.692) 100%), url("../img/salmonriver.jpg");
     background-size: 100%;
-   
     background-attachment: fixed;
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
 }
 
 .wave {
