@@ -9,63 +9,86 @@ const mainnav = document.querySelector('.navigation')
 
 hambutton.addEventListener('click', () => {mainnav.classList.toggle('responsive')}, false);
 
+//Cotacachi Info sun set, sun out//
 
-//Days forcast//
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      
+      var result = JSON.parse(this.responseText);
 
-const apiURL2 = "https://api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&appid=aee52151b6cc7c7556030fdb68db7347";
-fetch(apiURL2)
-  .then((response) => response.json())
-  .then((jsObject2) => {
-    
-
-    let fivedayforecast = [];
-    let day = 1;
-    let weekday = [];
-    var days = new Array('Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat');
-
-    for (let i = 0; i < jsObject2.list.length && day < 6; i++) {
-      if (jsObject2.list[i].dt_txt.includes("18:00:00")) {
-        fivedayforecast[i] = jsObject2.list[i].main.temp;
-        const imagesrc = 'https://openweathermap.org/img/w/' + jsObject2.list[i].weather[0].icon + '.png';
-        const desc = jsObject2.list[i].weather[0].description; 
-
-        let now = new Date(jsObject2.list[i].dt_txt);
-        weekday = days[now.getDay()];
-        document.getElementById("day" + day).innerHTML = weekday;
-        document.getElementById("forecast" + day).innerHTML = fivedayforecast[i] + "&deg; F";
-        document.getElementById("icon" + day).setAttribute("src", imagesrc); 
-        document.getElementById("icon" + day).setAttribute("alt", desc);
-        day++;
-      }
+      document.getElementById("demo").innerHTML = " Sunrise "　+ " at " + result.results.sunrise + " <br> " + " Sunset " + " at " + result.results.sunset;
     }
-  });
+  };
+  xhttp.open("GET", "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400", true);
+  xhttp.send();
+}
 
+//Ajax temperatura//
 
-  //little square//
-  
-  const requestURL = 'https://byui-cit230.github.io/weather/data/towndata.json';
+const inconElement = document.querySelector(".weather-icon");
+const tempElement = document.querySelector(".temperature-value p");
+const descElement = document.querySelector(".temperature-description p");
+const locationElement = document.querySelector(".location p");
+const notificationElement = document.querySelector(".notification");
 
-fetch(requestURL)
-  .then(function (response) {
-    return response.json();
-  })  
-  .then(function (jsonObject) {
-    const towns = jsonObject['towns'];
+const weather = {};
+
+weather.temperature = {
+    unit : "celsius"
+}
+
+const KELVIN = 273;
+const key = "82005d27a116c2880c8f0fcb866998a0";
+
+if('geolocation' in navigator){
+    navigator.geolocation.getCurrentPosition(setPosition, showError);
+
+}else{
+    notificationElement.style.display = "block";
+    notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>";
+
+}
+
+function setPosition(position){
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
     
-    for (let i = 0; i < towns.length; i++) {
-      if (towns[i].name == "Preston") {
-        let eventul = document.createElement('ul');
-        let eventdiv = document.createElement('div');
-        for (let cont = 0; cont < towns[i].events.length; cont++) {
-          let list = document.createElement('li');
-          
-          list.setAttribute('class', 'eventlist');
-          list.textContent = towns[i].events[cont];
-          eventul.appendChild(list);
-        }
+    getWeather(latitude, longitude);
+}
 
-        eventdiv.appendChild(eventul);
-        document.querySelector('div.eventdiv').appendChild(eventdiv);
-      }
-    }
+function showError(error){
+    notificationElement.style.display = "block";
+    notificationElement.innerHTML = `<p> ${error.message} </p>`;
+
+}
+
+function getWeather(latitude, longitude){
+    let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+
+
+fetch(api)
+.then(function(response){
+    let data = response.json();
+    return data;
+})
+.then(function(data){
+    weather.temperature.value = Math.floor(data.main.temp - KELVIN);
+    weather.description = data.weather[0].description;
+    weather.iconId = data.weather[0].icon;
+    weather.city = data.name;
+    weather.country = data.sys.country;
+
+})
+.then(function(){
+    displayWeather();
 });
+}
+function displayWeather(){
+    inconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
+tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    descElement.innerHTML = weather.description;
+    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+
+}
