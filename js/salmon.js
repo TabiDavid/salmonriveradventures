@@ -65,7 +65,8 @@ function showError(error){
 }
 
 function getWeather(latitude, longitude){
-    let api = "https://api.openweathermap.org/data/2.5/weather?id=5604473&units=imperial&APPID=aee52151b6cc7c7556030fdb68db7347";
+    
+  let api = "https://api.openweathermap.org/data/2.5/weather?id=5604473&units=imperial&APPID=aee52151b6cc7c7556030fdb68db7347";
     
     //`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;//
 
