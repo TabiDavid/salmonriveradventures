@@ -50,21 +50,44 @@
                         <h4 class="form-title"><span>Fill the form to make a reservation</span></h4>
                     </div>
                     <label for="name" class="form-label">Name: </label>
-                    <input type="text" id="name" class="form-input" placeholder="Write your name">
+                    <input type="text" id="name" class="form-input" name="name" pattern="[A-z\s]{5,}"
+                     require placeholder="Write your name">
 
                     <label for="address" class="form-label">Address: </label>
                     <input type="text" id="address" class="form-input" placeholder="Write your address">
+
+                    <label for="telephone" class="form-label">Telephone: </label>
+                    <input type="text" id="telephone" class="form-input" pattern="[0-9\s]{10,}"
+                    required placeholder="Write your Phone Number">
 
 
                     <label for="email" class="form-label">Email: </label>
                     <input type="email" id="email" class="form-input" placeholder="Write your email">
                     
+                    <label for="persons" class="form-label">Number of Persons: </label>
+                    <input type="number" id="persons" class="form-input" placeholder="Room people">
+
+
+                    <label class="form-label" >Reservation Date:</label>
+                    <input type="date" class="form-input" name="theDate">
+
+
+                    <label for="persons">Gender:</label>
+                    <select class="form-label" id="persons" name="persons">
+                      <option value="gender">none</option>
+                      <option value="gender">Male</option>
+                      <option value="gender">Female</option>
+                      <option value="gender">Other</option>
+                    </select>
+
+
+                    
+
                     <label for="message" class="form-label">Message: </label>
                     <textarea type="text" id="message" class="form-input" placeholder="Write your message"></textarea>
 
-                    <input type="submit" class="bnt-sumit" value="Send message">
+                    <input type="submit" id="boton" class="btn-sumit" value="Send message">
                 </form>
-
             </div>
         </main>
         <div>
