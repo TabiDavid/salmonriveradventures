@@ -9,89 +9,32 @@ const mainnav = document.querySelector('.navigation')
 
 hambutton.addEventListener('click', () => {mainnav.classList.toggle('responsive')}, false);
 
-//Cotacachi Info sun set, sun out//
 
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      
-      var result = JSON.parse(this.responseText);
 
-      document.getElementById("demo").innerHTML = " Sunrise "　+ " at " + result.results.sunrise + " <br> " + " Sunset " + " at " + result.results.sunset;
-    }
-  };
-  xhttp.open("GET", "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400", true);
-  xhttp.send();
-}
+//Json object//
+function guideRiver(){
 
-//Ajax temperatura//
-
-const inconElement = document.querySelector(".weather-icon");
-const tempElement = document.querySelector(".temperature-value p");
-const descElement = document.querySelector(".temperature-description p");
-const locationElement = document.querySelector(".location p");
-const notificationElement = document.querySelector(".notification");
-
-const weather = {};
-
-weather.temperature = {
-    unit : "celsius"
-}
-
-const KELVIN = 273;
-const key = "aee52151b6cc7c7556030fdb68db7347";
-
-if('geolocation' in navigator){
-    navigator.geolocation.getCurrentPosition(setPosition, showError);
-
-}else{
-    notificationElement.style.display = "block";
-    notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>";
-
-}
-
-function setPosition(position){
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
+    var text = '{"employees":[' +
+    '{"firstName":"John","lastName":"Doe", "age":"22", "Certificate":"Tourism","experience":"5 years", "email":"John@email.com","description":"I love to work with a lot of people and teaching and helping them to know the marvelous creation that this world has."},' +
+    '{"firstName":"Anna","lastName":"Smith", "age":"25", "Certificate":"Tourism","experience":"4 years", "email":"Anna@email.com", "description":"If you are looking for someone who really likes to walk and teach you about plan and animal I am the right person."},' +
+    '{"firstName":"Peter","lastName":"Jones", "age":"40", "Certificate":"Tourism","experience":"3 years", "email":"Peter@email.com", "description":"Explere and have adventure is something that I love since I was a child if you have the same desire just call me and spend a fun time." }]}';
     
-    getWeather(latitude, longitude);
-}
-
-function showError(error){
-    notificationElement.style.display = "block";
-    notificationElement.innerHTML = `<p> ${error.message} </p>`;
-
-}
-
-function getWeather(latitude, longitude){
+    obj = JSON.parse(text);
     
-  let api = "https://api.openweathermap.org/data/2.5/weather?id=5604473&units=imperial&APPID=aee52151b6cc7c7556030fdb68db7347";
+    document.getElementById("outPut1").innerHTML =
+    obj.employees[0].firstName + " " + obj.employees[0].lastName + " " + obj.employees[0].age + " " + 
+    obj.employees[0].Certificate + " " + obj.employees[0].experience + " " + obj.employees[0].email + " " + obj.employees[0].description;
     
-    //`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;//
 
 
-fetch(api)
-.then(function(response){
-    let data = response.json();
-    return data;
-})
-.then(function(data){
-    weather.temperature.value = Math.floor(data.main.temp - KELVIN);
-    weather.description = data.weather[0].description;
-    weather.iconId = data.weather[0].icon;
-    weather.city = data.name;
-    weather.country = data.sys.country;
+    document.getElementById("outPut2").innerHTML =
+    obj.employees[1].firstName + " " + obj.employees[1].lastName + " " + obj.employees[1].age + " " + 
+    obj.employees[1].Certificate + " " + obj.employees[1].experience + " " + obj.employees[1].email + " " + obj.employees[1].description;
+    
+    
+    document.getElementById("outPut3").innerHTML =
+    obj.employees[2].firstName + " " + obj.employees[2].lastName + " " + obj.employees[2].age + " " + 
+    obj.employees[2].Certificate + " " + obj.employees[2].experience + " " + obj.employees[2].email + " " + obj.employees[2].description;
+        
 
-})
-.then(function(){
-    displayWeather();
-});
-}
-function displayWeather(){
-    inconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
-tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-    descElement.innerHTML = weather.description;
-    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-
-}
+};
