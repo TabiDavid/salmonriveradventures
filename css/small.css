@@ -112,7 +112,7 @@ main {
     width: 80%;
     margin: auto;
 }
-.box {
+.box .box2{
 border: 10px;
 width: 100%;
 margin: auto;
@@ -122,7 +122,7 @@ padding: 40px;
 
 }
 
-.contain {
+.contain .contain2{
     width: 100%;
     height: auto;
     margin: 25px auto;
@@ -141,6 +141,13 @@ padding: 40px;
     margin: 25px auto;
     text-align: center;
     
+}
+
+/*Social media */
+
+.social {
+    width: 20px;
+    height: 20px;
 }
 
 /*Weather information */
@@ -223,6 +230,7 @@ padding: 40px;
             color: #ff851b;
             text-align: center;
             padding: 50px 0;
+            
 
         }
        .form-title {
