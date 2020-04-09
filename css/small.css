@@ -279,7 +279,7 @@ padding: 40px;
             min-height: 50px;
         }
 
-       #boton{
+       #boton {
             width: 100%;
             font-family: 'Comic Neue', cursive;
             outline: none;
@@ -305,4 +305,16 @@ padding: 40px;
 
 }
 
+.information {
+    width: 100%;
+    font-family: 'Comic Neue', cursive;
+    outline: none;
+    background: #ff851b;
+    font-size: 20px;
+    border: none;
+    color: rgb(235, 225, 225);
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all .5s ease;
+}
 
