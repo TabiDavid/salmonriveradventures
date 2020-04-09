@@ -23,9 +23,10 @@ function John(){
     
     obj = JSON.parse(text);
     
-    document.getElementById("outPut1").innerHTML =
-    obj.employees[0].firstName + " " + obj.employees[0].lastName + " " + obj.employees[0].age + " " + 
-    obj.employees[0].Certificate + " " + obj.employees[0].experience + " " + obj.employees[0].email + " " + obj.employees[0].description;
+    document.getElementById("outPut1").innerHTML = "Name: " + " " + 
+    obj.employees[0].firstName + " " + obj.employees[0].lastName + " </br> " + "Age: " + " " + obj.employees[0].age + "</br> " + 
+    "Certificate: " + " " + obj.employees[0].Certificate + " </br> " + "Experience:" + " " + obj.employees[0].experience + " </br> " + "Email: " + " " + 
+    obj.employees[0].email + " </br> " + "Description: " + " " + obj.employees[0].description;
     
 
 };
@@ -40,9 +41,10 @@ function Anna(){
     obj = JSON.parse(text);
     
 
-    document.getElementById("outPut2").innerHTML =
-    obj.employees[1].firstName + " " + obj.employees[1].lastName + " " + obj.employees[1].age + " " + 
-    obj.employees[1].Certificate + " " + obj.employees[1].experience + " " + obj.employees[1].email + " " + obj.employees[1].description;
+    document.getElementById("outPut2").innerHTML = "Name: " + " " + 
+    obj.employees[1].firstName + " " + obj.employees[1].lastName + " </br> " + "Age: " + " " + obj.employees[1].age + "</br> " + 
+    "Certificate: " + " " + obj.employees[1].Certificate + " </br> " + "Experience:" + " " + obj.employees[1].experience + " </br> " + "Email: " + " " + 
+    obj.employees[1].email + " </br> " + "Description: " + " " + obj.employees[1].description;
     
 
 };
@@ -56,8 +58,9 @@ function Peter(){
     
     obj = JSON.parse(text);
     
-    document.getElementById("outPut3").innerHTML =
-    obj.employees[2].firstName + " " + obj.employees[2].lastName + " " + obj.employees[2].age + " " + 
-    obj.employees[2].Certificate + " " + obj.employees[2].experience + " " + obj.employees[2].email + " " + obj.employees[2].description;
+    document.getElementById("outPut3").innerHTML = "Name: " + " " + 
+    obj.employees[2].firstName + " " + obj.employees[2].lastName + " </br> " + "Age: " + " " + obj.employees[2].age + "</br> " + 
+    "Certificate: " + " " + obj.employees[2].Certificate + " </br> " + "Experience:" + " " + obj.employees[2].experience + " </br> " + "Email: " + " " + 
+    obj.employees[2].email + " </br> " + "Description: " + " " + obj.employees[2].description;
         
 };
