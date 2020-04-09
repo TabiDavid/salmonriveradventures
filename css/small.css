@@ -117,7 +117,7 @@ border: 10px;
 width: 100%;
 margin: auto;
 text-align: center;
-background-color: rgb(11, 116, 116);
+
 padding: 40px;
 
 }
@@ -127,7 +127,7 @@ padding: 40px;
     height: auto;
     margin: 25px auto;
     padding: 20px;
-    border: black solid;
+   
 }
 
 .image{
@@ -211,7 +211,7 @@ padding: 40px;
 
         text-align: center;
         padding: 10px;
-        background-color: rgb(80, 35, 56);
+        background-color: rgb(11, 116, 116);
         font-family: 'Trade Winds' ;
         color: honeydew;
         max-width: 100%;
