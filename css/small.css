@@ -102,14 +102,13 @@ header .textos h1{
 }
 
 header .textos h2{
-    font-size: 30px; 
+    font-size: 50px; 
     font-weight: 600;
-    background-color: lightcoral;
-    width: 200px;
-    height: 70px;
+    
+    width: 100%;
     margin: auto;
     padding: 18px;
-    border-radius: 10px;
+    
 
 }
 
@@ -325,12 +324,4 @@ padding: 40px;
     transition: all .5s ease;
 }
 
-#book {
-    width: 200px;
-    height: 70px;
-    border-radius: 10px;
-    background: #ef767a;
-    font-size: 30px;
-    padding: 18px;
-   
-}
+
