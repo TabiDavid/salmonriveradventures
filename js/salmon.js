@@ -1,6 +1,6 @@
 //google fonts code//
 
-WebFont.load({ google: { families: ['Trade Winds', 'Roboto'] } });
+WebFont.load({ google: { families: ['Trade Winds', 'Roboto', 'Sen', 'Comic Neue'] } });
 
 
 // Menu nav bar//
